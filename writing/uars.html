@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Primer Into UARS — Kevin Zhu</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Berkeley Mono', 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fafafa;
+    padding: 3rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.2s;
+  }
+
+  a:hover {
+    border-color: #1a1a1a;
+  }
+
+  .back {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .back a { color: #999; }
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .date {
+    font-size: 0.82rem;
+    color: #999;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+
+  .aside {
+    font-size: 0.85rem;
+    color: #666;
+    border-left: 2px solid #ddd;
+    padding-left: 1rem;
+    margin: 1.25rem 0;
+    font-style: italic;
+  }
+
+  code {
+    font-size: 0.9em;
+    background: #eee;
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+  }
+
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #bbb;
+  }
+
+  @media (max-width: 500px) {
+    body { font-size: 14px; padding: 2rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<span class="back">← <a href="..">back</a></span>
+
+<h1>A primer into UARS — the sleep disorder you've never heard of</h1>
+<div class="date">february 2026</div>
+
+<p>Upper Airway Resistance Syndrome is the most underdiagnosed sleep disorder you've never heard of. I've spent several years trying to solve it for myself. This is everything I've learned — the clinical picture, the diagnostic pitfalls, the treatment ladder, and what actually helped.</p>
+
+<p>One of my symptoms: I have songs playing in my head 24/7. Not metaphorically — a constant, involuntary musical loop, all day, every day. It's one of the stranger manifestations of fragmented sleep, and it's what eventually convinced me something was genuinely wrong beyond "just being tired."</p>
+
+<p>This isn't medical advice. It's one person's obsessive deep-dive into a condition most doctors don't screen for.</p>
+
+<h2>what UARS is</h2>
+
+<p>UARS sits on the spectrum of sleep-disordered breathing, somewhere between normal and obstructive sleep apnea (OSA). The airway doesn't fully collapse like in OSA — instead, it narrows just enough to cause respiratory effort-related arousals (RERAs). You don't stop breathing. You just work harder to breathe, and your brain wakes you up dozens of times per night without you knowing.</p>
+
+<p>The classic UARS patient looks nothing like the classic OSA patient. You can be young, thin, fit, and still have it. The hallmark symptoms are: chronic daytime fatigue, cognitive fog, attention problems, and unrefreshing sleep despite seemingly adequate hours.</p>
+
+<div class="aside">My sleep study came back with an AHI of 3.2 — technically "normal." But my RDI was 8.8. That gap is the UARS signature: few full apneas, lots of RERAs. Most sleep labs only report AHI, which means most UARS cases get missed entirely.</div>
+
+<h2>how I got here</h2>
+
+<p>In 2019, I moved into an apartment with a severe dust mite problem. Within months I developed chronic nasal congestion, and my sleep quality tanked. The congestion caused my inferior turbinates to enlarge — and they never fully went back to normal, even after I moved out and the allergies improved.</p>
+
+<p>The result: years of increasingly bad sleep, worsening attention, and a diagnosis odyssey that took far too long. Before I ever identified the airway as the problem, I chased every other explanation:</p>
+
+<ul>
+  <li>Brain CT scan, MRI, and EEG — all normal</li>
+  <li>Full neuropsych evaluation — OCD, ADHD, anxiety, depression screening, all inconclusive or subclinical</li>
+  <li>Gut microbiome optimization — I made my own milk kefir daily for months</li>
+</ul>
+
+<p>I saw allergists, ENTs, and sleep specialists before finally landing on UARS as the root cause. Everything else was a red herring.</p>
+
+<h2>the diagnostic problem</h2>
+
+<p>UARS is hard to catch because:</p>
+
+<ul>
+  <li><strong>AHI misses it.</strong> The standard metric for sleep apnea (Apnea-Hypopnea Index) doesn't capture RERAs. You need a sleep study that scores RDI (Respiratory Disturbance Index) separately, which many labs don't do.</li>
+  <li><strong>You don't look the part.</strong> Sleep doctors are pattern-matching for overweight, middle-aged men who snore. Young, thin patients get dismissed.</li>
+  <li><strong>Symptoms overlap with everything.</strong> Fatigue, brain fog, and attention issues get attributed to stress, depression, ADHD — anything but an airway problem.</li>
+</ul>
+
+<div class="aside">There's a strong causal link between sleep-disordered breathing and attention deficits. If you've been diagnosed with ADHD and also have chronic fatigue or unrefreshing sleep, getting a proper sleep study is worth it.</div>
+
+<h2>anatomy of the problem</h2>
+
+<p>In my case, the bottleneck has three components:</p>
+
+<ol>
+  <li><strong>Turbinate hypertrophy</strong> — the dominant baseline restriction and main source of night-to-night variability. Turbinates swell and shrink with allergies, humidity, position, and the nasal cycle.</li>
+  <li><strong>Nasal valve narrowing</strong> — a structural contributor. The cheek-lift / tip-lift test can help identify this: if pulling your cheek or nasal tip outward dramatically improves airflow, the valve is a factor.</li>
+  <li><strong>Rhinitis (mixed)</strong> — partly allergic (dust mites), partly vasomotor/reactive. This explains why my congestion sometimes worsens with humidity or temperature changes independent of allergen exposure.</li>
+</ol>
+
+<p>A CBCT scan in 2023 confirmed a narrow pharyngeal airway in addition to the nasal issues.</p>
+
+<h2>the treatment ladder</h2>
+
+<p>I've tried roughly everything. In ascending order of intervention:</p>
+
+<p><strong>Allergen control:</strong> frequent sheet washing, Mission Allergy encasements, HEPA filter, minimizing carpet/fabric surfaces. Necessary foundation but not sufficient alone.</p>
+
+<p><strong>Nasal sprays:</strong> Flonase → Azelastine → Dymista → Xhance → Allermi (custom compound: fluticasone + azelastine + oxymetazoline + ipratropium). Allermi has been the most effective at opening the nasal airway, but comes with concerns about rebound congestion from the oxymetazoline component.</p>
+
+<p><strong>Allergy immunotherapy:</strong> subcutaneous allergy shots. A long play — takes years to fully work, but addresses the root allergic component.</p>
+
+<p><strong>Positional therapy:</strong> side sleeping (tennis ball trick, backpacks), elevated head of bed. Helps with gravity-dependent congestion and airway collapsibility.</p>
+
+<p><strong>External nasal support:</strong> Breathe Right strips, nasal dilators, nasal stents. Addresses the nasal valve component. Small effect but easy wins.</p>
+
+<p><strong>Things that didn't move the needle:</strong> Alaxo nasal stents, myofunctional therapy with an IOPI tongue trainer, inspiratory muscle training (Powerbreathe), and a homemade mandibular advancement device. All plausible in theory, none meaningfully changed my sleep quality.</p>
+
+<p><strong>PAP therapy:</strong> the heavy artillery. I started with CPAP (ResMed), saw maybe 10% improvement over 6 months. Switched to BiPAP (ResMed AirCurve) at 7 EPAP / 11 IPAP / 4 pressure support — about 30-40% improvement. Now on ASV (adaptive servo-ventilation), which dynamically adjusts pressure support breath-by-breath. ASV is the most sophisticated PAP mode — it targets not just obstruction but the variability in breathing effort itself. Still iterating.</p>
+
+<h2>the case for universal PAP</h2>
+
+<p>Almost everyone past a certain age should probably be on PAP therapy.</p>
+
+<p>The airway degrades with age. Muscle tone decreases, soft tissue sags, the tongue falls back more easily. This isn't a disease process — it's normal aging. But the result is that most adults develop some degree of airway resistance during sleep, even if they never cross the clinical threshold for a sleep apnea diagnosis. The question isn't whether your airway narrows at night. It's how much, and whether the consequences are crossing the threshold into symptoms you'd notice.</p>
+
+<p>The reason this matters: subclinical sleep-disordered breathing still fragments sleep architecture. You can have an AHI of 2 and still be losing deep sleep to subtle arousals that never get scored as events. PAP isn't just for people with a diagnosis — it's arguably the single most effective intervention for sleep quality in anyone whose airway isn't perfectly patent at night. Which, past 30 or so, is most people.</p>
+
+<h2>work of breathing: the carlvoncosel framework</h2>
+
+<p>One of the most useful conceptual models for understanding UARS treatment comes from <a href="https://www.reddit.com/user/carlvoncosel/">u/carlvoncosel</a> on Reddit, who has been writing about Work of Breathing (WOB) for years.</p>
+
+<p>The core idea: UARS isn't just about whether your airway is open or closed. It's about how much <em>effort</em> your respiratory system expends to move air. Even if the airway never technically obstructs, increased resistance means your diaphragm and intercostal muscles have to work harder. This elevated WOB is itself the problem — it triggers arousals, fragments sleep, and drives the chronic fatigue and cognitive symptoms.</p>
+
+<p>This reframing changes how you think about treatment. The goal of PAP therapy isn't just to prevent apneas or even hypopneas — it's to reduce the total work of breathing to a level where the respiratory effort is so low that the brain has no reason to arouse. This is why some UARS patients need BiPAP or even ASV despite having "normal" AHI numbers on CPAP: the CPAP might be keeping the airway open, but the patient is still fighting the expiratory pressure, which keeps WOB elevated.</p>
+
+<p>BiPAP helps because the lower expiratory pressure (EPAP) reduces the work of breathing on exhale, while the higher inspiratory pressure (IPAP) provides a boost on inhale. The pressure support (IPAP minus EPAP) is essentially the machine doing part of the breathing work for you. The inhale/exhale ratio in OSCAR becomes a key metric: if it's close to 1:1, you're working too hard to exhale against the pressure. A healthy ratio is closer to 1:2.</p>
+
+<div class="aside">carlvoncosel's key insight: stop thinking about events (apneas, hypopneas, RERAs) and start thinking about effort. The flow rate curve on OSCAR tells you everything — if it's not a clean sinewave, the work of breathing is elevated, regardless of what the event counters say.</div>
+
+<h2>rounding the curve: the Krakow approach</h2>
+
+<p>Barry Krakow is one of the few sleep doctors who deeply understands UARS and treats it aggressively. His framework centers on what he calls "rounding the airway curve" — the idea that the goal of treatment is to progressively smooth out the flow rate waveform until it approximates a perfect sinewave.</p>
+
+<p>In a healthy airway with no resistance, each breath produces a smooth, symmetrical curve: a clean rise on inhale, a clean fall on exhale. In UARS patients, the curve gets distorted. Common deformities include:</p>
+
+<ul>
+  <li><strong>Flattening</strong> — the top of the inspiratory curve plateaus instead of rounding smoothly. This indicates flow limitation: the airway is narrowing under negative pressure.</li>
+  <li><strong>Up-then-dip</strong> — the curve rises then drops mid-inhale. The airway is partially collapsing during the breath.</li>
+  <li><strong>Rounded/blunted peaks</strong> — instead of a sharp peak, the curve is dome-shaped. Increased resistance is dampening airflow.</li>
+  <li><strong>Expiratory creep</strong> — a small bump at the end of expiration, potentially indicating expiratory flow limitation (EFL), where the airway is narrowing on exhale too.</li>
+</ul>
+
+<p>Krakow's treatment approach is iterative. You make a change — adjust EPAP, add pressure support, fix a leak, improve nasal breathing — then look at the curves again. Did they get smoother? Closer to a sinewave? If yes, you're on the right track. If not, iterate. The curves are the ground truth, not the event indices.</p>
+
+<p>His other key principles: nasal breathing is a necessary precondition for PAP to work (you must solve nasal obstruction first), mouth leak is more damaging than most people realize, and the combination of a good nasal spray (like Allermi) + Breathe Right strip + properly titrated PAP is often the stack that finally works.</p>
+
+<div class="aside">Krakow's approach is fundamentally empirical: try something, read the curves, iterate. He treats the flow rate waveform as the objective function and optimizes against it. This is why he's effective where most sleep doctors aren't — they're optimizing against AHI, which doesn't capture the signal that matters for UARS.</div>
+
+<h2>the optimization problem</h2>
+
+<p>Treating UARS is a high-dimensional optimization problem. Your variables include: EPAP, IPAP, pressure support, ramp time, EPR/flex settings, mask type, mask fit, nasal spray regimen, allergen control, sleep position, head elevation, mouth taping, humidity settings, and a dozen other knobs. Each one interacts with the others. Changing your EPAP might require changing your nasal spray. Fixing a leak might change your optimal pressure support. It's not a set of independent variables — it's a coupled system.</p>
+
+<p>And your gradient signal? How you feel when you wake up. That's it. Your morning vibes are the loss function. Did you wake up foggy or clear? Did you feel rested or wrecked? The OSCAR data gives you a richer signal — flow curves, leak graphs, event indices — but ultimately, the ground truth is how your brain feels at 7am. You make a change, sleep on it, read the signal, and iterate. Some days the gradient is noisy. Some weeks you plateau. But over months, the trendline either moves or it doesn't.</p>
+
+<div class="aside">This is why UARS treatment is so hard to outsource to a doctor. No one can feel your gradient signal for you. The best sleep doctors give you the framework, but you have to run the optimization loop yourself.</div>
+
+<h2>reading PAP data</h2>
+
+<p>If you're on PAP therapy, learning to read your own data in <a href="https://www.sleepfiles.com/OSCAR/">OSCAR</a> is non-negotiable. The key things to watch:</p>
+
+<ul>
+  <li><strong>Flow rate curves</strong> should be smooth sinewaves. Rounded curves, flattening, or up-then-dip patterns indicate flow limitation — your airway is still partially obstructing even with pressure.</li>
+  <li><strong>Inhale/exhale ratio</strong> should be roughly 1:2. Ratios near 1:1 suggest you're working too hard to exhale against the pressure, which is why BiPAP (with separate inhale/exhale pressures) can help.</li>
+  <li><strong>Mouth leak</strong> graphs matter more than the machine's threshold suggests. Even sub-threshold leak can degrade therapy effectiveness.</li>
+</ul>
+
+<div class="aside">The Glasgow Index is a more granular metric than AHI for assessing residual flow limitation on PAP. It can filter by flow event type and analyze trends across multiple nights.</div>
+
+<h2>what I'd tell someone just starting</h2>
+
+<ol>
+  <li><strong>Get a sleep study that scores RDI, not just AHI.</strong> If your AHI is "normal" but you're symptomatic, ask specifically about RERAs.</li>
+  <li><strong>Fix nasal breathing first.</strong> This is a necessary precondition for PAP success. Most nasal breathing issues are solvable with the right combination of sprays, allergy management, and possibly surgery. But be careful with turbinate reduction — aggressive procedures risk Empty Nose Syndrome (ENS), a devastating iatrogenic condition where the turbinates are reduced so much that the nose can no longer sense airflow. Also know that turbinates often grow back over time, negating the surgical benefit. If considering surgical options, look into EASE (Expansion Sphincter Pharyngoplasty) by Kasey Li, but be aware that turbinates can expand to fill any new space created.</li>
+  <li><strong>OSCAR is your best friend.</strong> Don't rely on the machine's summary numbers. Learn to read flow rate curves and identify residual events.</li>
+  <li><strong>Find a sleep doctor who knows UARS.</strong> Most don't. Look for someone who treats beyond AHI, understands flow limitation, and is willing to iterate on PAP settings.</li>
+  <li><strong>It's a long game.</strong> There's rarely one fix. It's usually a stack of interventions — allergen control + sprays + positional + PAP + time — that compound into meaningful improvement.</li>
+</ol>
+
+<h2>resources</h2>
+
+<ul>
+  <li><a href="https://www.reddit.com/r/UARS/">r/UARS</a> — the most active community for this condition</li>
+  <li><a href="https://www.apneaboard.com/">ApneaBoard</a> — deep PAP therapy optimization discussions</li>
+  <li><a href="https://www.sleepfiles.com/OSCAR/">OSCAR</a> — open-source PAP data analysis software</li>
+  <li>Barry Krakow's work on UARS and complex sleep-disordered breathing</li>
+</ul>
+
+<div class="footer">
+  <a href="..">Kevin Zhu</a>
+</div>
+
+</body>
+</html>

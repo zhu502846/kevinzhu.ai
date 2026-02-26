@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kevin Zhu</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Berkeley Mono', 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fafafa;
+    padding: 3rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.2s;
+  }
+
+  a:hover {
+    border-color: #1a1a1a;
+  }
+
+  .header {
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .nav {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  .nav a {
+    color: #666;
+    margin-right: 0.25rem;
+  }
+
+  .nav .sep {
+    margin: 0 0.35rem;
+    color: #ccc;
+  }
+
+  .intro {
+    margin-bottom: 2.5rem;
+    color: #333;
+  }
+
+  .section {
+    margin-bottom: 2.25rem;
+  }
+
+  .section-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: lowercase;
+    letter-spacing: 0.05em;
+    color: #999;
+    margin-bottom: 0.75rem;
+  }
+
+  .item {
+    margin-bottom: 0.6rem;
+  }
+
+  .item-title {
+    font-weight: 500;
+  }
+
+  .item-desc {
+    color: #666;
+    font-size: 0.85rem;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    color: #999;
+    border: 1px solid #ddd;
+    padding: 0.1rem 0.4rem;
+    border-radius: 2px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ul li {
+    padding-left: 1.2rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+  }
+
+  ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: #ccc;
+    font-weight: bold;
+  }
+
+  .footer-aside {
+    font-size: 0.82rem;
+    color: #aaa;
+    margin-top: 1.5rem;
+    font-style: italic;
+  }
+
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #bbb;
+  }
+
+  @media (max-width: 500px) {
+    body { font-size: 14px; padding: 2rem 1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Kevin Zhu</h1>
+  <div class="nav">
+    NYC<span class="sep">·</span>[<a href="https://www.linkedin.com/in/zhu-kevin1/">linkedin</a>]<span class="sep">·</span>[<a href="mailto:kevin@algoverseairesearch.org">email</a>]
+  </div>
+</div>
+
+<div class="intro">
+  <p>I founded <a href="https://algoverseairesearch.org/">Algoverse</a>, where we mentor ambitious students into published ML researchers. I think about AI safety, mechanistic interpretability, and how to build institutions that produce great research.</p>
+  <br>
+  <p>Previously: quantitative research at <a href="#">Citadel</a>, software engineering at <a href="#">Palantir</a>. CS from <a href="#">UC Berkeley</a>, where I was a 4x head TA for <a href="https://www2.eecs.berkeley.edu/Courses/CS170/">CS 170</a> and a researcher in the <a href="https://rise.cs.berkeley.edu/">RISE Lab</a>.</p>
+</div>
+
+<div class="section">
+  <div class="section-title">now</div>
+  <div class="item">
+    <span class="item-title"><a href="https://algoverseairesearch.org/">Algoverse</a></span> <span class="tag">current</span>
+    <div class="item-desc">Founded an AI research mentorship program — students publishing at NeurIPS, EMNLP, and other top venues.</div>
+  </div>
+  <div class="item">
+    <span class="item-title">Mechanistic Interpretability</span>
+    <div class="item-desc">Understanding what language models are actually computing.</div>
+  </div>
+  <div class="item">
+    <span class="item-title">AI Safety</span>
+    <div class="item-desc">Cofounded the <a href="https://algoverseairesearch.org/ai-safety-fellowship">Algoverse AI Safety Fellowship</a>, funded by <a href="https://www.openphilanthropy.org/">Open Philanthropy</a>.</div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-title">selected work</div>
+  <ul>
+    <li><a href="https://arxiv.org/abs/2410.07839">Semantic Self-Consistency</a> <span class="tag">NeurIPS '24 MATH-AI</span>
+      <div class="item-desc">Featured in <a href="https://openai.com/index/paperbench/">OpenAI's PaperBench</a> — one of 22 papers selected to benchmark AI research replication.</div>
+    </li>
+    <li><a href="https://openreview.net/forum?id=EV30qkZXrR">Scratchpad Thinking</a> <span class="tag">(Spotlight) NeurIPS '25 Mech Interp</span>
+      <div class="item-desc">Latent reasoning models alternate between storage and computation across layers.</div>
+    </li>
+    <li><a href="https://arxiv.org/abs/2506.02000">NovelHopQA</a> <span class="tag">EMNLP '25</span>
+      <div class="item-desc">Diagnosing multi-hop reasoning failures in long narrative contexts.</div>
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <div class="section-title">writing</div>
+  <ul>
+    <li><a href="notes/algorithms.pdf">A gentle introduction to algorithms</a> — divide and conquer, FFT, graphs, DP, LP, and P/NP</li>
+    <li><a href="writing/uars.html">A primer into UARS</a></li>
+    <li><a href="writing/lucid-dreaming.html">A primer on lucid dreaming</a></li>
+  </ul>
+</div>
+
+<div class="footer-aside">
+  Also into double board PLO bomb pots and League (retired D1).
+</div>
+
+<div class="footer">
+  last updated feb 2026
+</div>
+
+</body>
+</html>
