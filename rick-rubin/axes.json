@@ -1,0 +1,44 @@
+[
+  {
+    "key": "acoustic",
+    "label": "Acoustic ↔ Electronic",
+    "posLabel": "Acoustic",
+    "negLabel": "Electronic"
+  },
+  {
+    "key": "energy",
+    "label": "Calm ↔ Energetic",
+    "posLabel": "Energetic",
+    "negLabel": "Laid-back"
+  },
+  {
+    "key": "brightness",
+    "label": "Dark ↔ Bright",
+    "posLabel": "Bright / joyful",
+    "negLabel": "Dark / somber"
+  },
+  {
+    "key": "aggressive",
+    "label": "Soft ↔ Heavy",
+    "posLabel": "Heavy",
+    "negLabel": "Soft"
+  },
+  {
+    "key": "production",
+    "label": "Raw ↔ Polished",
+    "posLabel": "Polished",
+    "negLabel": "Raw / lo-fi"
+  },
+  {
+    "key": "density",
+    "label": "Intimate ↔ Epic",
+    "posLabel": "Epic",
+    "negLabel": "Intimate"
+  },
+  {
+    "key": "sacred",
+    "label": "Sacred ↔ Secular",
+    "posLabel": "Sacred",
+    "negLabel": "Secular"
+  }
+]

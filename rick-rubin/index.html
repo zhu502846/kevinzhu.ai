@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Latent Space of Rick Rubin</title>
+  <meta name="description" content="An interactive map of the music Rick Rubin produced — embedded from the actual audio. Hear how one producer's catalog scatters across the entire map of music.">
+  <link rel="preconnect" href="https://is1-ssl.mzstatic.com">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div id="stage">
+    <canvas id="map"></canvas>
+  </div>
+
+  <!-- intro -->
+  <div id="intro">
+    <div class="intro-card">
+      <div class="kicker">An AI concept, for someone who has never coded</div>
+      <h1>A latent space of Rick&nbsp;Rubin songs</h1>
+      <p>Rick Rubin can't play an instrument or read music. Yet he's produced
+      Slayer, Johnny Cash, the Beastie Boys, Adele, Kanye, and System of a Down.</p>
+      <p>Here is every kind of music he's made on one map. AI listened to each track,
+      and <b>you choose what the directions mean</b> — more aggressive, more acoustic,
+      more sacred. Every song slides to where it belongs, by how it actually sounds.</p>
+      <p>That map is a <b>latent space</b>. When you prompt an AI, you aren't asking it
+      to copy a song — you're asking it to <b>move in a direction on a map like this one.</b></p>
+      <button class="enter-btn" id="enter">Open the map →</button>
+      <div class="intro-hint">Choose what the axes mean — "more aggressive," "more acoustic," "more sacred" — and watch the songs move · click any dot to hear 30 seconds</div>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div class="hud" id="title-hud">
+    <h2>The Latent Space of Rick Rubin</h2>
+    <p id="title-sub"><span id="track-count">…</span> tracks · embedded from the audio · choose what each axis means</p>
+  </div>
+
+  <div class="hud" id="controls">
+    <div class="axis-picker">
+      <label>X</label><select id="x-axis"></select>
+      <label>Y</label><select id="y-axis"></select>
+    </div>
+    <button class="ctl-btn" id="reset-view">Reset</button>
+  </div>
+
+  <!-- axis edge labels -->
+  <div id="lab-top"    class="axis-label axis-y"></div>
+  <div id="lab-bottom" class="axis-label axis-y"></div>
+  <div id="lab-left"   class="axis-label axis-x"></div>
+  <div id="lab-right"  class="axis-label axis-x"></div>
+
+  <div class="hud" id="legend">
+    <div class="lg-title">Genres · click to isolate</div>
+    <div id="legend-items"></div>
+  </div>
+
+  <!-- tooltip -->
+  <div id="tooltip"></div>
+
+  <!-- now playing -->
+  <div id="nowplaying">
+    <img id="np-art" src="" alt="">
+    <div id="np-meta">
+      <div id="np-title"></div>
+      <div id="np-artist"></div>
+    </div>
+    <button id="np-stop" title="Stop">×</button>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
