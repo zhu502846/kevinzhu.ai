@@ -31,9 +31,15 @@
   let hoverIdx = -1;
   let playingIdx = -1;
   let highlightGenre = null;
+  let pointerW = null;          // pointer position in WORLD coords (for repulsion)
   const audio = new Audio();
   audio.preload = "none";
   let t0 = performance.now();
+
+  // idle-float + cursor-repulsion tuning (world units; axis range is [-1,1])
+  const FLOAT_AMP = 0.018;      // idle drift radius
+  const REPEL_R = 0.34;         // cursor influence radius
+  const REPEL_STR = 0.14;       // max push distance
 
   // ---------- layout ----------
   function resize() {
@@ -60,11 +66,18 @@
 
   // ---------- targets + animation ----------
   function setTargets() {
-    for (const t of tracks) {
+    tracks.forEach((t, i) => {
       t._tx = t.axes[xKey] ?? 0;
       t._ty = t.axes[yKey] ?? 0;
       if (t._cx === undefined) { t._cx = t._tx; t._cy = t._ty; }
-    }
+      if (t._fx === undefined) {           // per-dot idle-float params (deterministic)
+        t._phx = (i * 1.7) % 6.283;
+        t._phy = (i * 2.9 + 1.3) % 6.283;
+        t._fx = 0.18 + (i % 5) * 0.035;    // slow, varied frequencies
+        t._fy = 0.16 + (i % 7) * 0.029;
+        t._px = 0; t._py = 0;              // eased cursor-repulsion offset
+      }
+    });
   }
 
   function dotRadius() { return Math.max(3.4, 5.6 * Math.sqrt(cam.scale)); }
@@ -77,15 +90,33 @@
     drawGrid();
 
     const r = dotRadius();
-    let moving = false;
+    const ts = now / 1000;
     for (let i = 0; i < tracks.length; i++) {
       const t = tracks[i];
-      // ease current -> target
+      // ease home position toward the axis target
       t._cx += (t._tx - t._cx) * 0.14;
       t._cy += (t._ty - t._cy) * 0.14;
-      if (Math.abs(t._tx - t._cx) > 0.001 || Math.abs(t._ty - t._cy) > 0.001) moving = true;
 
-      const [sx, sy] = worldToScreen(t._cx, t._cy);
+      // idle float (gentle drift around home)
+      const fx = FLOAT_AMP * Math.sin(ts * t._fx * 6.283 + t._phx);
+      const fy = FLOAT_AMP * Math.cos(ts * t._fy * 6.283 + t._phy);
+
+      // cursor repulsion (push away from pointer, eased in/out)
+      let tpx = 0, tpy = 0;
+      if (pointerW) {
+        const ddx = t._cx - pointerW[0], ddy = t._cy - pointerW[1];
+        const dist = Math.hypot(ddx, ddy);
+        if (dist < REPEL_R) {
+          const f = (1 - dist / REPEL_R), inv = dist > 1e-4 ? 1 / dist : 0;
+          tpx = ddx * inv * f * REPEL_STR;
+          tpy = ddy * inv * f * REPEL_STR;
+        }
+      }
+      t._px += (tpx - t._px) * 0.18;
+      t._py += (tpy - t._py) * 0.18;
+
+      const [sx, sy] = worldToScreen(t._cx + fx + t._px, t._cy + fy + t._py);
+      t._sx = sx; t._sy = sy;             // remember rendered pos for hit-testing
       if (sx < -20 || sx > W + 20 || sy < -20 || sy > H + 20) continue;
       const color = GENRE_COLORS[t.genre] || FALLBACK_COLOR;
       const dim = highlightGenre && t.genre !== highlightGenre;
@@ -104,24 +135,21 @@
 
     if (hoverIdx >= 0) {
       const t = tracks[hoverIdx];
-      const [sx, sy] = worldToScreen(t._cx, t._cy);
-      ctx.beginPath(); ctx.arc(sx, sy, r + 4, 0, Math.PI * 2);
+      ctx.beginPath(); ctx.arc(t._sx, t._sy, r + 4, 0, Math.PI * 2);
       ctx.strokeStyle = "#fff"; ctx.lineWidth = 1.6; ctx.stroke();
     }
     if (playingIdx >= 0) {
       const t = tracks[playingIdx];
-      const [sx, sy] = worldToScreen(t._cx, t._cy);
       const phase = ((now - t0) % 1400) / 1400;
-      ctx.beginPath(); ctx.arc(sx, sy, r + 4 + phase * 22, 0, Math.PI * 2);
+      ctx.beginPath(); ctx.arc(t._sx, t._sy, r + 4 + phase * 22, 0, Math.PI * 2);
       ctx.strokeStyle = `rgba(255,255,255,${0.5 * (1 - phase)})`; ctx.lineWidth = 2; ctx.stroke();
-      ctx.beginPath(); ctx.arc(sx, sy, r + 3, 0, Math.PI * 2);
+      ctx.beginPath(); ctx.arc(t._sx, t._sy, r + 3, 0, Math.PI * 2);
       ctx.strokeStyle = "#fff"; ctx.lineWidth = 2; ctx.stroke();
     }
 
-    // keep tooltip glued to hovered dot while it animates
+    // keep tooltip glued to hovered dot while it floats/animates
     if (hoverIdx >= 0 && tooltip.classList.contains("show")) {
-      const [sx, sy] = worldToScreen(tracks[hoverIdx]._cx, tracks[hoverIdx]._cy);
-      placeTooltip(sx, sy);
+      placeTooltip(tracks[hoverIdx]._sx, tracks[hoverIdx]._sy);
     }
 
     requestAnimationFrame(draw);
@@ -150,8 +178,8 @@
     for (let i = 0; i < tracks.length; i++) {
       const t = tracks[i];
       if (highlightGenre && t.genre !== highlightGenre) continue;
-      const [px, py] = worldToScreen(t._cx, t._cy);
-      const dx = px - sx, dy = py - sy, d = dx * dx + dy * dy;
+      if (t._sx === undefined) continue;
+      const dx = t._sx - sx, dy = t._sy - sy, d = dx * dx + dy * dy;
       if (d < bestD) { bestD = d; best = i; }
     }
     return best;
@@ -206,6 +234,7 @@
     canvas.setPointerCapture(e.pointerId);
   });
   canvas.addEventListener("pointermove", e => {
+    pointerW = screenToWorld(e.clientX, e.clientY);   // drive repulsion field
     if (dragging) {
       const dx=e.clientX-lastX, dy=e.clientY-lastY;
       if (Math.abs(e.clientX-downX)+Math.abs(e.clientY-downY) > 4) moved=true;
@@ -220,7 +249,7 @@
     dragging=false;
     if (!moved){ const i=pickAt(e.clientX,e.clientY); if(i>=0) play(i); }
   });
-  canvas.addEventListener("pointerleave", () => { hideTooltip(); hoverIdx=-1; });
+  canvas.addEventListener("pointerleave", () => { hideTooltip(); hoverIdx=-1; pointerW=null; });
   canvas.addEventListener("wheel", e => {
     e.preventDefault(); zoomAt(e.clientX, e.clientY, Math.exp(-e.deltaY*0.0015));
   }, { passive:false });
