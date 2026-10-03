@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B70MGNV29D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-B70MGNV29D');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I spent seven years building productivity systems. Adderall one-shotted it. AI's bitter lesson, applied to self-improvement.">
+<meta property="og:title" content="the bitter lesson of self-improvement">
+<meta property="og:description" content="I spent seven years building productivity systems. Adderall one-shotted it. AI's bitter lesson, applied to self-improvement.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://kevinzhu.ai/writing/bitter-lesson.html">
+<meta name="twitter:card" content="summary">
+<title>The Bitter Lesson of Self-Improvement — Kevin Zhu</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Berkeley Mono', 'SF Mono', 'Fira Code', 'JetBrains Mono', 'Cascadia Code', monospace;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #fafafa;
+    padding: 3rem 1.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  a {
+    color: #1a1a1a;
+    text-decoration: none;
+    border-bottom: 1px solid #ccc;
+    transition: border-color 0.2s;
+  }
+
+  a:hover {
+    border-color: #1a1a1a;
+  }
+
+  .back {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .back a { color: #999; }
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.25rem;
+  }
+
+  .date {
+    font-size: 0.82rem;
+    color: #999;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  ul, ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  li {
+    margin-bottom: 0.4rem;
+  }
+
+  .aside {
+    font-size: 0.85rem;
+    color: #666;
+    border-left: 2px solid #ddd;
+    padding-left: 1rem;
+    margin: 1.25rem 0;
+    font-style: italic;
+  }
+
+  code {
+    font-size: 0.9em;
+    background: #eee;
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+  }
+
+  .footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    font-size: 0.8rem;
+    color: #bbb;
+  }
+
+  @media (max-width: 500px) {
+    body { font-size: 14px; padding: 2rem 1.25rem; }
+  }
+
+  hr { border: none; border-top: 1px solid #eee; margin: 1.75rem 0; }
+  .tldr { font-size: 0.9rem; color: #555; background: #f2f2f2; padding: 0.9rem 1rem; border-radius: 3px; }
+  figure { margin: 1.25rem 0 1.5rem; }
+  figure img { width: 100%; height: auto; border: 1px solid #e5e5e5; display: block; }
+  figcaption { font-size: 0.8rem; color: #999; margin-top: 0.4rem; font-style: italic; }
+  sup { font-size: 0.7em; line-height: 0; }
+  sup a { border-bottom: none; color: #888; padding: 0 1px; }
+  .notes { font-size: 0.85rem; }
+  .notes p { color: #555; margin-bottom: 0.6rem; }
+  .notes li { margin-bottom: 0.9rem; }
+  .backref { border-bottom: none; color: #aaa; }
+</style>
+</head>
+<body>
+
+<span class="back">← <a href="..">back</a></span>
+
+<h1>the bitter lesson of self-improvement</h1>
+<div class="date">october 2026</div>
+
+<hr>
+
+<p>tl;dr: how I <em>actually</em> improved my life. I spent seven years building productivity systems, from normie advice to 'natty' biohacking and dissecting the ontology of executive function. Each one helped a little. Adderall one-shotted it. This is basically <a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">the bitter lesson</a> but for self-improvement. Clever scaffolding loses to a better base model, and as the base improves, new abilities emerge that no amount of prompting could elicit. The same goes for people. A better base raises your reliability at every step at once, and things that used to be impossible suddenly become routine. If you've been prompt-engineering yourself, the model itself might be the problem.</p>
+
+<p>For most of my life, I could not get myself to do work.</p>
+
+<p>This was fine through elementary, middle, and high school. Where I grew up, you could skip the homework and still get good grades as long as you did well on the exams. Most days I didn't even open my backpack. I played hours of League every night until my eyes bled.</p>
+
+<p>Then I got to Berkeley, and reality hit: I actually had to do homework and study. Other students seemed to do it with ease, and I couldn't figure out how. My theory was that a lot of them grew up in competitive places like the Bay Area, where they'd been forced to develop productivity systems. I never had to. I set a goal to catch up on productivity systems. I've been on that journey ever since.</p>
+
+<p>The first problem was procrastination. Some days at Berkeley I spent 14 hours rotating through cheap dopamine: groupchats, TikTok, Instagram, Snapchat, YouTube, Reddit. Reddit was so bad that I'd exhaust everything in "hot" and "top" and move on to "new" and "rising." When I got tired of those, I'd cycle through Gmail, Slack, Piazza (the class forum), and sometimes random Wikipedia pages. When I was a TA, I was consistently #1 out of everyone in the class (close to a thousand people cause it was Berkeley) for threads read.</p>
+
+<figure><img src="piazza-stats-blurred.png" alt="Piazza statistics table with other students' names blurred; I'm ranked first by posts viewed" loading="lazy"><figcaption>Piazza stats from a class I TA'd, sorted by posts viewed.</figcaption></figure>
+
+<p>Then I would repeat the cycle.</p>
+
+<p>Obviously this was terrible, so I started building systems. It started with normie advice you'd see in self-help books and surface-level youtube. That helped somewhat; it helped me go from a 3.1 GPA my first semester to a 4.0 my next.</p>
+
+<p>But it wasn't enough. I still spent hours procrastinating every day. I could not stand wasting so much time when I only have one life to live...</p>
+
+<h2>the pre-work ritual</h2>
+
+<p>I aimed deeper in the layers of abstraction to the neurotransmitter level. I discovered Andrew Huberman in 2021 and went into 'natty' biohacking optimization.</p>
+
+<p>I would do a pre-work ritual to try to increase my likelihood of doing work instead of procrastinating.</p>
+
+<p>I'd start with some breathwork to spike my autonomic arousal. Binaural beats. Baseball cap + hoodie to narrow my field of view. A mantra I verbalized to myself to get me going. Optimizing the everloving shit out of my workspace environment: monitor slightly above eye level (since looking up increases alertness), various social media blocking apps, and so on. This all helped a little, but still not enough.</p>
+
+<p>So I went deeper. I mapped out the full ontology of my <a href="https://www.lesswrong.com/s/oTMuc9C3KKdZ6FcCB/p/qXcLkF3nqQyBX3gzj">procedural executive function</a>. I added implementation intentions: <a href="https://www.lesswrong.com/posts/wJutA2czyFg6HbYoW/what-are-trigger-action-plans-taps">trigger-action plans</a> for exactly what I'd do when I sat down, when I got distracted, and when I got stuck. I used beeminder to try to counter <a href="https://en.wikipedia.org/wiki/Akrasia">akrasia</a>. I coded a desktop app with an "execution window" and a script to go with it, so the transition into work could run like a program.</p>
+
+<p>I also tried the opposite: stripping the system down to a few heuristics, and eventually to a single one, "just do it." That didn't stick either.</p>
+
+<p><strong>7 years</strong> of attacking the problem from every angle and layer I could find (habit formation, identity change, meditation, task organization, stress reduction, etc), and nothing solved it.</p>
+
+<p>Then I started taking Adderall, and it basically just one-shotted it.<sup id="ref1"><a href="#fn1">1</a></sup> No need to unravel the abstraction down to the neurotransmitter level or engineer a full system. Now I just sit down and start.</p>
+
+<p>The day I first took it, at 30 mg, the <a href="uars.html">songs in my head</a> went quiet for the first time in six years. Everything felt seamless. I just wanted to get work done. There was nothing I felt the need to avoid, and I didn't burn out a few minutes into something I didn't want to do.</p>
+
+<p>The rest followed. I could organize things. My room looked way better. I could finish projects.</p>
+
+<p>Looking back, my main feeling wasn't relief. It was: <em>damn, I wasted a lot of time trying to be natural when I should have just gotten enhanced.</em></p>
+
+<h2>the bitter lesson</h2>
+
+<p>In 2019, Rich Sutton wrote a short essay called <em><a href="http://www.incompleteideas.net/IncIdeas/BitterLesson.html">The Bitter Lesson</a></em>. His observation, drawn from 70 years of AI research: methods that encode human cleverness (hand-built chess heuristics, linguistic rules for speech recognition, hand-designed features for vision) get beaten again and again by general methods that just use more computation. Search and learning, scaled up.</p>
+
+<p>The lesson is bitter because researchers keep relearning it. The clever approach is satisfying. It reflects your understanding of the problem, and it works in the short term. Then scale arrives and makes it irrelevant, and years of careful work turn out to have been a local optimum.</p>
+
+<p>Large language models made this concrete in a way that's hard to ignore, and they added something Sutton's essay only hints at: <strong>emergence</strong>.</p>
+
+<h2>emergence</h2>
+
+<p>In the <a href="https://arxiv.org/abs/2005.14165">GPT-3 paper</a>, the 13-billion-parameter model could do two-digit addition and subtraction only about half the time, even with examples in the prompt. The 175-billion-parameter model, trained the same way, got two-digit addition right essentially 100% of the time. Same recipe, more scale: unreliable became dependable.</p>
+
+<p>This pattern is everywhere in the scaling literature. <a href="https://arxiv.org/abs/2206.07682">Wei et al. (2022)</a> catalogued dozens of tasks where performance sits near random across a wide range of model sizes, then jumps sharply past some threshold.</p>
+
+<p>Multi-step arithmetic, word unscrambling, multi-hop questions: these abilities don't improve gradually from small models. Below a certain scale they're effectively absent, and above it they're present.</p>
+
+<p>Meanwhile, an enormous amount of human ingenuity went into scaffolding weaker models:</p>
+
+<ul><li><strong>Prompt tricks.</strong> "<a href="https://arxiv.org/abs/2309.03409">Take a deep breath and work on this step by step</a>." "I'll tip you $200 for a perfect answer." "<a href="https://arxiv.org/abs/2305.14688">You are a world-class expert</a>." People measured these and some genuinely helped. A few points here, a few points there.</li><li><strong>Agent frameworks.</strong> In 2023, <a href="https://arxiv.org/abs/2306.02224">AutoGPT</a> and <a href="https://github.com/yoheinakajima/babyagi_archive">BabyAGI</a> became some of the fastest-growing repos on GitHub. They wrapped GPT-4 in elaborate loops of planning, memory, self-critique, and task queues. Mostly they got stuck in loops, forgot what they were doing, and burned through API credits.</li></ul>
+
+<p>At Algoverse in 2023-2024, we also had our fair share of these scaffolds (<a href="https://arxiv.org/abs/2407.03624">1</a>,<a href="https://arxiv.org/abs/2412.04509">2</a>,<a href="https://arxiv.org/abs/2410.19499">3</a>).</p>
+
+<p>The scaffolds weren't useless. But they were local fixes on a system that was below the threshold, and no amount of local fixing pushed it over. What pushed it over was improving the model itself: first scale, then reinforcement learning on chain of thought, which is what finally fixed reasoning.</p>
+
+<p>Anthropic's own engineers <a href="https://www.anthropic.com/engineering/harness-design-long-running-apps">documented this happening</a> in 2026. Their harness for long-running coding agents used context resets, because Claude Sonnet 4.5 showed what they called "context anxiety" as its context window filled up, and a "sprint" structure that broke big tasks into chunks, because Opus 4.5 couldn't sustain them. Opus 4.5 made the context resets unnecessary. With Opus 4.6, they removed the sprint structure too. The newer model worked coherently for over two hours without that decomposition. They kept the planner and evaluator, which still helped. Their summary: every harness component "encodes an assumption about what the model can't do on its own."</p>
+
+<p>My pre-work ritual was AutoGPT. Trigger-action plans were "take a deep breath."</p>
+
+<h2>why scaffolds can't get you there</h2>
+
+<p>The defining feature of emergent capabilities is that nobody built them. No one at OpenAI wrote an arithmetic module for GPT-3. They made the model better at one general thing, predicting text, and arithmetic showed up as a side effect, along with translation, code, and dozens of other abilities nobody targeted.</p>
+
+<p>Scaffolds are the opposite. Each one is built for one specific failure: a prompt trick for this task, an agent loop for that one. You get exactly what you engineered, and nothing else.</p>
+
+<p>My systems were all scaffolds. The pre-work ritual targeted starting. Beeminder targeted akrasia. Trigger-action plans targeted distraction. Task managers targeted forgetting: a physical notebook, then a notepad, Todoist, Asana, Google Docs, back to a notepad, Obsidian with extra scaffolding on top, and finally my own vibe-coded system with a Discord bot, a mobile app, and a desktop app. One system per failure, for seven years.</p>
+
+<p>Adderall didn't target any of them. It changed one general thing,<sup id="ref2"><a href="#fn2">2</a></sup> and a whole list of abilities showed up together: starting on demand, staying inside a time block, the five-minute rule actually working, finishing projects that take weeks. I'd spent years engineering each of those individually. They arrived as side effects.</p>
+
+<p>Some of what showed up, I'd never tried to engineer at all. I felt more creative. Ideas started coming to me unprompted, and I got an urge to make things: content, side projects, essays. This one included.</p>
+
+<p>When the base improves, you don't just get the thing you were working on. You get everything downstream of it, including things you never thought to work on.</p>
+
+<h2>the scaffolds are emergent too!</h2>
+
+<p>My favorite detail from the LLM literature is this one. <a href="https://arxiv.org/abs/2201.11903">Chain-of-thought prompting</a>, which asks the model to reason step by step, is the most famous prompt technique ever discovered. In the original paper, it <em>hurt</em> smaller models. They produced fluent but illogical reasoning and got worse answers. The technique only started helping at around 100B parameters.</p>
+
+<p>The scaffold itself was an emergent ability. It only worked above the threshold.</p>
+
+<p>This is true in the real world too.</p>
+
+<p>My scaffolds in the above section all ran on the same resource they were meant to supplement. A task manager needs executive function to maintain. A pre-work ritual needs executive function to <em>execute</em>. Below the threshold, each system is just one more thing to fail at, which is why so many people with ADHD have a graveyard of abandoned apps.</p>
+
+<p><em>In order to use these scaffolds to manage your ADHD, you have to not have ADHD!</em></p>
+
+<p>It was a daily struggle to use them. Now they just work.</p>
+
+<p>I think this is the most underrated idea in self-improvement. A lot of advice works brilliantly for the people who give it, and they're not lying. Plan your week on Sunday. Do the hardest task first. Time-block your calendar. It works for them because they're above the threshold where the advice becomes usable.</p>
+
+<p>Adderall didn't make the urge to procrastinate go away. It made the anti-procrastination advice I already knew finally start working.</p>
+
+<h2>muscle</h2>
+
+<p>Online natural bodybuilding has developed an impressively sophisticated literature on technique and exercise selection. Lengthened partials, resistance curves, stretch-mediated hypertrophy, exercise rankings by tension profile.</p>
+
+<p>Go read r/naturalbodybuilding for an afternoon and you'll see the lengths people go to just to get a fraction of what enhanced lifters get within months. That's been true in my experience too.</p>
+
+<p>There's a reason people make fun of the science-based lifting crowd: a lot of it is grasping at straws for extremely marginal improvements.</p>
+
+<p>In 1996, Bhasin et al. put healthy men into four groups for ten weeks: placebo or testosterone, with or without training. The men who got testosterone and <strong>did not train at all</strong> gained more fat-free mass than the men who trained naturally. Testosterone plus training produced the largest gains.<sup id="ref3"><a href="#fn3">3</a></sup></p>
+
+<p>The couch plus the base beat the gym without it.</p>
+
+<p>Enhanced pros run training volumes that would wreck a natural lifter, which is why "don't copy pro routines" is standard advice for naturals. The program isn't wrong. It's a scaffold that only works above the threshold, just like chain-of-thought.</p>
+
+<p>Do note I'm not dunking on being natural or being a "science-based lifter". There are some tradeoffs with going on TRT or blasting test, to say the least. If you've decided to stay natural, and you have the bandwidth to take on the extra complexity, there's no downside to optimizing technique. You might as well. But you have to understand that all of it is tiny compared to just improving your anabolic response by modulating your hormones.</p>
+
+<h2>the lesson</h2>
+
+<p>Sutton's advice to AI researchers was to stop building intelligence one skill at a time and bet on what scales. Every clever system built for a specific ability eventually lost to a model that just got better in general, and the abilities everyone had been engineering showed up on their own.</p>
+
+<p>Self-improvement has the same trap. It's natural to treat each failure as its own problem with its own fix: a ritual for starting, an app for forgetting, a technique for each muscle. Each one helps a little. But what I actually wanted was never one ability. It was everything downstream of a better base.</p>
+
+<p>So before you build the next system, ask the question AI researchers kept learning the hard way: am I scaffolding around a weak model, or should I be improving the model?<sup id="ref4"><a href="#fn4">4</a></sup></p>
+
+<hr>
+
+<h2>notes</h2>
+<ol class="notes">
+<li id="fn1"><p>Not 100%, to be clear. There are still days it doesn't work.</p><p>Why did it take seven years to try medication? I was scared of the health risks, and I tested negative for ADHD in 2020. I think a lot of my ADHD-like symptoms come from my <a href="uars.html">UARS</a>, and ADHD diagnosis is pretty subjective anyway. As <a href="https://slatestarcodex.com/2017/12/28/adderall-risks-much-more-than-you-wanted-to-know/">Scott Alexander argues</a>, attention is a normally distributed trait, and the diagnosis is an arbitrary line drawn somewhere on the curve. I'd also read that Adderall is probably neurotoxic, and the conventional advice, including my parents', was to do the natural thing first. Plausibly, if I engineered the systems just a litttle moreeee, then I wouldn't need it. Well, I do still think Adderall is probably neurotoxic (Scott, for what it's worth, seems less worried about this than I am), but it's worth the tradeoff in moderation. So I use it on occasion, which also slows the tolerance buildup. <a href="#ref1" class="backref" aria-label="back to text">↩</a></p></li>
+<li id="fn2"><p>The analogy isn't exact. Scaling a language model typically means training a new, bigger model from scratch. The literal human version would be growing a whole new person with a bigger brain, not giving a pill to an adult. Adderall doesn't change my weights. It changes how the existing model runs, which is closer to adjusting a model's internal activity at inference time (e.g activation steering) than to scaling it up. What carries over is the shape: one general change, a whole set of abilities nobody targeted showing up at once, and a pile of targeted fixes becoming unnecessary. <a href="#ref2" class="backref" aria-label="back to text">↩</a></p></li>
+<li id="fn3"><p><a href="https://www.nejm.org/doi/full/10.1056/NEJM199607043350101">Bhasin et al., <em>NEJM</em> 1996</a>. 43 men, 600 mg testosterone enanthate per week (a supraphysiological dose, well above TRT), 10 weeks. Fat-free mass gains: testosterone without training +3.2 kg, training without testosterone +1.9 kg, both +6.1 kg. <a href="#ref3" class="backref" aria-label="back to text">↩</a></p></li>
+<li id="fn4"><p>Not every base comes with a dial, though. There's no Adderall for IQ. Why muscle and focus, but not intelligence? Gwern's <a href="https://gwern.net/drug-heuristic">Algernon argument</a>: if a simple tweak gave a free gain, evolution would already have taken it, so anything that works must cost something or serve a goal evolution didn't share. Testosterone and dopamine pass that test. Evolution set them at a compromise, because more muscle costs food and fertility and constant arousal costs sleep, so you can push them if you're willing to pay. Human intelligence wasn't a compromise. More kept winning, so evolution has already taken every cheap gain. <a href="#ref4" class="backref" aria-label="back to text">↩</a></p></li>
+</ol>
+
+<div class="footer">
+  <a href="..">Kevin Zhu</a>
+</div>
+
+</body>
+</html>
