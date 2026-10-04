@@ -143,6 +143,30 @@
     color: #bbb;
   }
 
+
+  .research { margin-top: 3rem; width: min(980px, calc(100vw - 2rem)); position: relative; left: 50%; transform: translateX(-50%); }
+  .research-lede { color: #555; font-size: 0.95rem; margin-bottom: 1.25rem; }
+  .research > .section-title, .research-lede { text-align: center; }
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .plist { columns: 2; column-gap: 2rem; }
+  .plist li { break-inside: avoid; }
+  .pf { display: flex; flex-direction: column; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; overflow: hidden; transition: border-color .2s, box-shadow .2s, transform .2s; }
+  .pf:hover { border-color: #cfcfcf; box-shadow: 0 4px 14px rgba(0,0,0,0.06); transform: translateY(-1px); }
+  .pf-fig { height: 170px; background: #fff; border-bottom: 1px solid #f0f0f0; display: flex; align-items: center; justify-content: center; padding: 0.6rem; }
+  .pf-fig img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+  .pf-blank { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 600; letter-spacing: -0.02em; color: #d4d4d4; background: repeating-linear-gradient(135deg, #fbfbfb 0 10px, #f6f6f6 10px 20px); border-radius: 4px; }
+  .pf-body { padding: 0.75rem 0.9rem 0.85rem; }
+  .pf-venue { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #1a1a1a; margin-bottom: 0.25rem; }
+  .pf-track { font-weight: 500; color: #fff; background: #1a1a1a; padding: 0.05rem 0.35rem; border-radius: 3px; font-size: 0.62rem; margin-left: 0.25rem; }
+  .pf-title { font-size: 0.86rem; line-height: 1.4; color: #222; }
+  .pl-head { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; color: #aaa; margin: 1.5rem 0 0.5rem; }
+  .plist li { font-size: 0.86rem; color: #333; margin-bottom: 0.55rem; line-height: 1.45; }
+  .pl-venue { display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; color: #999; }
+  .pl-note { font-size: 0.72rem; color: #aaa; font-style: italic; }
+  .draft-flag { font-size: 0.7rem; color: #b45309; background: #fef3c7; padding: 0.05rem 0.35rem; border-radius: 3px; margin-left: 0.3rem; }
+  .research-also { font-size: 0.82rem; color: #777; margin-top: 1rem; }
+  @media (max-width: 860px) { .pgrid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .pgrid { grid-template-columns: 1fr; } .plist { columns: 1; } }
   @media (max-width: 500px) {
     body { font-size: 16px; padding: 2rem 1.25rem; }
   }
@@ -206,6 +230,18 @@
     <li><a href="notes/algorithms.pdf">A gentle introduction to algorithms</a> — divide and conquer, FFT, graphs, DP, LP, and P/NP</li>
     <li><a href="writing/uars.html">why I always have songs in my head</a> — a primer into UARS, the sleep disorder you've never heard of</li>
     <li><a href="writing/lucid-dreaming.html">lucid dreaming is about to become insane alpha</a></li>
+  </ul>
+</div>
+
+<div class="section research">
+  <div class="section-title">recent algoverse research</div>
+  <p class="research-lede">check out some of our recent work!</p>
+  <div class="pgrid">
+    <a class="pf" href="https://arxiv.org/abs/2604.15559"><div class="pf-fig"><img src="research-figs/2604.15559.jpg" alt="Figure 1 from Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation" loading="lazy"></div><div class="pf-body"><div class="pf-venue">NeurIPS 2026 <span class="pf-track">Main</span></div><div class="pf-title">Subliminal Transfer of Unsafe Behaviors in AI Agent Distillation</div></div></a><a class="pf" href="https://arxiv.org/abs/2608.12345"><div class="pf-fig"><img src="research-figs/2608.12345.jpg" alt="Figure 1 from Diagnostic Foundation for Evaluating LLMs' Research Integrity as Co-Scientists" loading="lazy"></div><div class="pf-body"><div class="pf-venue">NeurIPS 2026 <span class="pf-track">Evals &amp; Benchmarks</span></div><div class="pf-title">Diagnostic Foundation for Evaluating LLMs' Research Integrity as Co-Scientists</div></div></a><a class="pf" href="https://openreview.net/forum?id=UESTP6dR1K"><div class="pf-fig"><img src="research-figs/iclr-aspec.jpg" alt="Figure 1 from Automated Stateful Specialization for Adaptive Agent Systems" loading="lazy"></div><div class="pf-body"><div class="pf-venue">ICLR 2026 <span class="pf-track">Main</span></div><div class="pf-title">Automated Stateful Specialization for Adaptive Agent Systems</div></div></a><a class="pf" href="https://arxiv.org/abs/2510.11288"><div class="pf-fig"><img src="research-figs/2510.11288.jpg" alt="Figure 1 from Emergent Misalignment via In-Context Learning" loading="lazy"></div><div class="pf-body"><div class="pf-venue">ACL 2026 <span class="pf-track">Main</span></div><div class="pf-title">Emergent Misalignment via In-Context Learning</div></div></a><a class="pf" href="https://arxiv.org/abs/2607.22750"><div class="pf-fig"><img src="research-figs/2607.22750.jpg" alt="Figure 1 from Commitment to Cooperation with Self-Negotiated Contracts" loading="lazy"></div><div class="pf-body"><div class="pf-venue">COLM 2026 <span class="pf-track">Main</span></div><div class="pf-title">Commitment to Cooperation with Self-Negotiated Contracts</div></div></a><a class="pf" href="https://arxiv.org/abs/2609.22215"><div class="pf-fig"><img src="research-figs/2609.22215.jpg" alt="Figure 1 from On Mitigation of Subliminal Learning in Large Language Models" loading="lazy"></div><div class="pf-body"><div class="pf-venue">EMNLP 2026 <span class="pf-track">Findings</span></div><div class="pf-title">On Mitigation of Subliminal Learning in Large Language Models</div></div></a><a class="pf" href="https://arxiv.org/abs/2608.08300"><div class="pf-fig"><img src="research-figs/2608.08300.jpg" alt="Figure 1 from Mitigating Over-Personalization in LLMs via Structured Memory" loading="lazy"></div><div class="pf-body"><div class="pf-venue">AACL 2026 <span class="pf-track">Findings</span></div><div class="pf-title">Mitigating Over-Personalization in LLMs via Structured Memory</div></div></a><a class="pf" href="https://arxiv.org/abs/2602.18729"><div class="pf-fig"><img src="research-figs/2602.18729.jpg" alt="Figure 1 from MiSCHiEF: Minimal-Pairs of Safety and Culture for Fine-Grained Image-Caption Alignment" loading="lazy"></div><div class="pf-body"><div class="pf-venue">EACL 2026 <span class="pf-track">Main</span></div><div class="pf-title">MiSCHiEF: Minimal-Pairs of Safety and Culture for Fine-Grained Image-Caption Alignment</div></div></a><a class="pf" href="https://arxiv.org/abs/2506.02000"><div class="pf-fig"><img src="research-figs/2506.02000.jpg" alt="Figure 1 from NovelHopQA: Diagnosing Multi-Hop Reasoning Failures in Long Narrative Contexts" loading="lazy"></div><div class="pf-body"><div class="pf-venue">EMNLP 2025 <span class="pf-track">Main</span></div><div class="pf-title">NovelHopQA: Diagnosing Multi-Hop Reasoning Failures in Long Narrative Contexts</div></div></a>
+  </div>
+  <div class="pl-head">more</div>
+  <ul class="plist">
+    <li><span class="pl-venue">COLM 2026 · Main</span><a href="https://openreview.net/forum?id=sh7Nfve8si">MURMUR: Cross-Lingual and Multimodal Retrieval-Augmented Reasoning for Open Question Answering in Tamil and Yoruba</a></li><li><span class="pl-venue">EMNLP 2026 · Findings</span>Detection Before Suppression: Sequential Circuit Formation Explains a Below-Chance Dip in Language Model Training <span class="pl-note">paper coming soon</span></li><li><span class="pl-venue">EMNLP 2026 · Industry</span>CAST: Contrastive Adjudication via Selective Triggering for Efficient LLM Reasoning <span class="pl-note">paper coming soon</span></li><li><span class="pl-venue">EACL 2026 · Industry</span><a href="https://arxiv.org/abs/2512.00332">Assertion-Conditioned Compliance: A Provenance-Aware Vulnerability in Multi-Turn Tool-Calling Agents</a></li><li><span class="pl-venue">IASEAI 2026 · Main</span><a href="https://arxiv.org/abs/2512.15584">A Decision-Theoretic Approach for Managing Misalignment</a></li><li><span class="pl-venue">EMNLP 2025 · Findings</span><a href="https://arxiv.org/abs/2504.07100">EnDive: A Cross-Dialect Benchmark for Fairness and Performance in Large Language Models</a></li>
   </ul>
 </div>
 
