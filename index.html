@@ -144,6 +144,12 @@
   }
 
 
+  .prev { margin: 0.25rem 0 1.25rem; }
+  .prev .section-title { margin-bottom: 0.35rem; }
+  .prev-list li { padding-left: 0; margin-bottom: 0.15rem; font-size: 0.9rem; }
+  .prev-list li::before { content: none; }
+  .prev-org { font-weight: 500; color: #1a1a1a; }
+  .prev-role { color: #888; }
   .research { margin-top: 3rem; width: min(980px, calc(100vw - 2rem)); position: relative; left: 50%; transform: translateX(-50%); }
   .research-lede { color: #555; font-size: 0.95rem; margin-bottom: 1.25rem; }
   .research > .section-title, .research-lede { text-align: center; }
@@ -177,35 +183,27 @@
 <div class="header">
   <h1>Kevin Zhu</h1>
   <div class="nav">
-    NYC<span class="sep">·</span>[<a href="https://www.linkedin.com/in/zhu-kevin1/">linkedin</a>]<span class="sep">·</span>[<a href="mailto:zhu502846@berkeley.edu">email</a>]
+    NYC<span class="sep">·</span>[<a href="https://www.linkedin.com/in/zhu-kevin1/">linkedin</a>]<span class="sep">·</span>[<a href="https://www.instagram.com/kevinzhu.ai/">instagram</a>]<span class="sep">·</span>[<a href="mailto:zhu502846@berkeley.edu">email</a>]
   </div>
 </div>
 
 <div class="intro">
-  <p>I founded <a href="https://algoverseairesearch.org/">Algoverse</a>, where we mentor ambitious students into published ML researchers. I think about AI safety, mechanistic interpretability, and how to build institutions that produce great research.</p>
-  <br>
-  <p>Previously: quantitative research at Citadel, software engineering at Palantir. CS from UC Berkeley, where I was a 4x head TA for CS 170 and a researcher in the RISE Lab with Ion Stoica.</p>
-  <br>
-  <p>Always happy to chat — <a href="mailto:zhu502846@berkeley.edu">say hi!</a></p>
-</div>
+    <p>I founded <a href="https://algoverseairesearch.org/">Algoverse</a>, where we mentor ambitious students into published ML researchers, and cofounded the <a href="https://algoverseairesearch.org/ai-safety-fellowship">Algoverse AI Safety Fellowship</a>, funded by <a href="https://www.openphilanthropy.org/">Open Philanthropy</a>.</p>
+    <br>
+    <p>I think about AI safety, mechanistic interpretability, and how to build institutions that produce great research.</p>
+    <br>
+    <div class="prev">
+      <div class="section-title">previously</div>
+      <ul class="prev-list">
+        <li><span class="prev-org">Citadel</span> <span class="prev-role">— quantitative research</span></li>
+        <li><span class="prev-org">Palantir</span> <span class="prev-role">— software engineering</span></li>
+        <li><span class="prev-org">UC Berkeley</span> <span class="prev-role">— CS · 4x head TA, CS 170 · RISE Lab with Ion Stoica</span></li>
+      </ul>
+    </div>
+    <p>Always happy to chat — <a href="mailto:zhu502846@berkeley.edu">say hi!</a></p>
+  </div>
 
-<div class="section">
-  <div class="section-title">now</div>
-  <div class="item">
-    <span class="item-title"><a href="https://algoverseairesearch.org/">Algoverse</a></span> <span class="tag">current</span>
-    <div class="item-desc">Founded an AI research mentorship program — students publishing at NeurIPS, EMNLP, and other top venues.</div>
-  </div>
-  <div class="item">
-    <span class="item-title">Mechanistic Interpretability</span>
-    <div class="item-desc">Understanding what language models are actually computing.</div>
-  </div>
-  <div class="item">
-    <span class="item-title">AI Safety</span>
-    <div class="item-desc">Cofounded the <a href="https://algoverseairesearch.org/ai-safety-fellowship">Algoverse AI Safety Fellowship</a>, funded by <a href="https://www.openphilanthropy.org/">Open Philanthropy</a>.</div>
-  </div>
-</div>
-
-<div class="section">
+  <div class="section">
   <div class="section-title">selected work</div>
   <ul>
     <li><a href="https://arxiv.org/abs/2510.11288">Emergent Misalignment via In-Context Learning</a> <span class="tag">ACL '26</span>
